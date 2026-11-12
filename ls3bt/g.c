@@ -1,21 +1,30 @@
 #include <stdio.h>
-
+ 
 int main(){
     int a, b;
-    a = 1;
-    int sum = 0;
-    scanf("%d",&b);
-
-    for(int c = a; c <= b; c++){
-        int e = 0;
-        for(int d = 2; d * d <= c; d++){
-            if(c % d == 0){
-                e++;
+    scanf("%d %d", &a, &b);
+    int count = 0;
+ 
+    for(int num = a; num <= b; num++){
+        int check = 1;
+        if (num == 1){
+            continue;
+        }
+        //Hàm tìm số nguyên tố
+        for(int test = 2; test * test <= num; test++){
+            if(num % test == 0){
+                check = 0;
+                break;
             }
         }
-        if (e == 0 && c != 1){
-            sum += c;
+        if (check){
+            ++ count;
+            printf("%d ", num);
         }
     }
-    printf("%d", sum);
+
+    if (count == 0){
+        printf("Khong co");
+    }
+    printf("\n%d", count);
 }

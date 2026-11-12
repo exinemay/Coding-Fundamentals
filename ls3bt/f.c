@@ -3,6 +3,7 @@
 int main(){
     int a;
     scanf("%d", &a);
+    
     for(int b = 1; b <= a; b++){  
         int m = 0;
         int N;
